@@ -1,0 +1,1764 @@
+classDiagram
+    %% -- PROGRAMS --
+
+    %% SAGE2HAwep459SNq61LHvjxPk4pLPEJLoMETef7f7EE
+    class Sage_Program {
+        <<abstract>>
+        +initGame()
+        +updateGame()
+        +depositCargoToGame()
+        +withdrawCargoFromGame()
+        +devDepositCargoToGame()
+        +registerSagePointModifier()
+        +activateGameState()
+        +initGameState()
+        +updateGameState()
+        +copyGameState()
+        +registerStarbase()
+        +updateStarbase()
+        +deregisterStarbase()
+        +startStarbaseUpgrade()
+        +completeStarbaseUpgrade()
+        +closeUpgradeProcess()
+        +createStarbaseUpgradeResourceProcess()
+        +submitStarbaseUpgradeResource()
+        +syncStarbaseUpgradeIngredients()
+        +depositStarbaseUpkeepResource()
+        +transferCargoAtStarbase()
+        +closeStarbaseCargoTokenAccount()
+        +registerSagePlayerProfile()
+        +registerStarbasePlayer()
+        +syncStarbasePlayer()
+        +registerSurveyDataUnitTracker()
+        +updateSurveyDataUnitTracker()
+        +deregisterSurveyDataUnitTracker()
+        +drainSurveyDataUnitsBank()
+        +createCraftingProcess()
+        +startCraftingProcess()
+        +stopCraftingProcess()
+        +cancelCraftingProcess()
+        +closeCraftingProcess()
+        +burnCraftingConsumables()
+        +claimCraftingNonConsumables()
+        +claimCraftingOutputs()
+        +depositCraftingIngredient()
+        +withdrawCraftingIngredient()
+        +createFleet()
+        +disbandFleet()
+        +forceDisbandFleet()
+        +fleetStateHandler()
+        +addShipToFleet()
+        +loadFleetCrew()
+        +unloadFleetCrew()
+        +depositCargoToFleet()
+        +withdrawCargoFromFleet()
+        +transferCargoWithinFleet()
+        +updateShipInFleet()
+        +startSubwarp()
+        +stopSubwarp()
+        +warpLane()
+        +warpToCoordinate()
+        +idleToLoadingBay()
+        +loadingBayToIdle()
+        +idleToRespawn()
+        +respawnToLoadingBay()
+        +addRental()
+        +changeRental()
+        +invalidateRental()
+        +closeFleetCargoPodTokenAccount()
+        +forceDropFleetCargo()
+        +closeDisbandedFleet()
+        +disbandedFleetToEscrow()
+        +registerShip()
+        +updateShip()
+        +invalidateShip()
+        +setNextShip()
+        +addShipEscrow()
+        +removeShipEscrow()
+        +updateShipEscrow()
+        +removeInvalidShipEscrow()
+        +registerSageCrewConfig()
+        +addCrewToGame()
+        +removeCrewFromGame()
+        +closePlayerCrewRecord()
+        +devAddCrewToGame()
+        +mintCrewToGame()
+        +registerSector()
+        +discoverSector()
+        +addConnection()
+        +removeConnection()
+        +scanForSurveyDataUnits()
+        +registerPlanet()
+        +updatePlanet()
+        +startMiningAsteroid()
+        +stopMiningAsteroid()
+        +mineAsteroidToRespawn()
+        +registerResource()
+        +updateResource()
+        +deregisterResource()
+        +registerMineItem()
+        +updateMineItem()
+        +deregisterMineItem()
+        +drainMineItemBank()
+        +registerStar()
+        +updateStar()
+        +registerProgressionConfig()
+        +updateProgressionConfig()
+        +deregisterProgressionConfig()
+        +createCargoPod()
+        +createCertificateMint()
+        +mintCertificate()
+        +redeemCertificate()
+        +removeCargoPod()
+    }
+
+    %% Cargo2VNTPPTi9c1vq1Jw5d3BWUNr18MjRtSupAghKEk
+    class Cargo_Program {
+        <<abstract>>
+        +initDefinition()
+        +updateDefinition()
+        +initCargoType()
+        +initCargoTypeForNextSeqId()
+        +initCargoTypeFromOldCargoType()
+        +initCargoPod()
+        +closeCargoPod()
+        +addCargo()
+        +removeCargo()
+        +transferCargo()
+        +consumeCargo()
+        +mintTo()
+        +legitimizeCargo()
+        +transferAuthority()
+        +updateCargoPod()
+        +updatePodTokenAccount()
+        +closeTokenAccount()
+    }
+
+    %% CRAFT2RPXPJWCEix4WpJST3E7NLf79GTqZUL75wngXo5
+    class Crafting_Program {
+        <<abstract>>
+        +initializeDomain()
+        +updateDomain()
+        +registerCraftingFacility()
+        +updateCraftingFacility()
+        +deregisterCraftingFacility()
+        +addCraftingFacilityRecipeCategory()
+        +removeCraftingFacilityRecipeCategory()
+        +registerRecipeCategory()
+        +deregisterRecipeCategory()
+        +registerRecipe()
+        +updateRecipe()
+        +addConsumableInputToRecipe()
+        +addNonConsumableInputToRecipe()
+        +addOutputToRecipe()
+        +removeConsumableInputFromRecipe()
+        +removeNonConsumableInputFromRecipe()
+        +removeOutputFromRecipe()
+        +createCraftingProcess()
+        +startCraftingProcess()
+        +stopCraftingProcess()
+        +cancelCraftingProcess()
+        +closeCraftingProcess()
+        +addRecipeIngredient()
+        +removeRecipeIngredient()
+        +legitimizeRecipeIngredient()
+        +burnConsumableIngredient()
+        +claimNonConsumableIngredient()
+        +claimRecipeOutput()
+        +registerCraftableItem()
+        +drainCraftableItemBank()
+    }
+
+    %% pprofELXjL5Kck7Jn5hCpwAL82DpTkSYBENzahVtbc9
+    class PlayerProfile_Program {
+        <<abstract>>
+        +createProfile()
+        +addKeys()
+        +removeKeys()
+        +adjustAuth()
+        +setName()
+        +createRole()
+        +removeRole()
+        +addExistingMemberToRole()
+        +inviteMemberToRole()
+        +removeMemberFromRole()
+        +setRoleAcceptingMembers()
+        +setRoleNotAcceptingMembers()
+        +setRoleAuthorizer()
+        +setRoleName()
+        +acceptRoleInvitation()
+        +joinRole()
+        +leaveRole()
+    }
+
+    %% pFACSRuobDmvfMKq1bAzwj27t6d2GJhSCHb1VcfnRmq
+    class ProfileFaction_Program {
+        <<abstract>>
+        +chooseFaction()
+    }
+
+    %% pv1ttom8tbyh83C1AVh6QH2naGRdVQUVt3HY1Yst5sv
+    class ProfileVault_Program {
+        <<abstract>>
+        +createVaultAuthority()
+        +closeVault()
+        +drainVault()
+    }
+
+    %% Point2iBvz7j5TMVef8nEgpmz4pDr7tU7v3RjAfkQbM
+    class Points_Program {
+        <<abstract>>
+        +createPointCategory()
+        +updatePointCategory()
+        +addPointCategoryLevel()
+        +removePointCategoryLevel()
+        +registerPointModifier()
+        +deregisterPointModifier()
+        +createUserPointAccount()
+        +createUserPointAccountWithLicense()
+        +incrementPoints()
+        +decrementPoints()
+        +spendPoints()
+        +incrementLevel()
+        +incrementLevelBeyondThreshold()
+        +decrementLevel()
+    }
+
+    %% PsToRxhEPScGt1Bxpm7zNDRzaMk31t8Aox7fyewoVse
+    class PointsStore_Program {
+        <<abstract>>
+        +createRedemptionConfig()
+        +closeRedemptionConfig()
+        +addRedemptionEpoch()
+        +removeRedemptionEpoch()
+        +updateRedemptionEpoch()
+        +startRedemption()
+        +contributeToRedemption()
+        +claimTokens()
+        +createPointsStore()
+        +closeStore()
+        +buy()
+        +changeStorePrice()
+        +removeStoreItems()
+    }
+
+    %% CREWiq8qbxvo4SKkAFpVnc6t7CRQC4tAAscsNAENXgrJ
+    class Crew_Program {
+        <<abstract>>
+        +registerCrewConfig()
+        +registerPackTiers()
+        +updatePackTiers()
+        +registerPackType()
+        +registerSftRedemption()
+        +redeemCrewPack()
+        +mintCrewMember()
+    }
+
+    %% traderDnaR5w6Tcoi3NFm53i48FTDNbGjBSZwWXDRrg
+    class Marketplace_Program {
+        <<abstract>>
+        +updateAtlasRate()
+        +initializeMarketplace()
+        +processInitializeBuy()
+        +processInitializeSell()
+        +processExchange()
+        +processCancel()
+        +registerCurrency()
+        +deregisterCurrency()
+        +updateCurrencyRoyalty()
+        +updateCurrencyVault()
+        +addRoyaltyTier()
+        +deleteRoyaltyTier()
+        +updateRoyaltyTier()
+        +initializeOpenOrdersCounter()
+        +addFeeExemption()
+        +removeFeeExemption()
+    }
+
+    %% APR1MEny25pKupwn72oVqMH4qpDouArsX8zX4VwwfoXD
+    class AtlasFeePayer_Program {
+        <<abstract>>
+        +createFeePayerRates()
+        +createFeePayer()
+        +closeFeePayer()
+        +preTransaction()
+        +postTransaction()
+        +postTransactionNoVault()
+        +setFeePayerRates()
+    }
+
+    %% SRSLY1fq9TJqCk1gNSE7VZL2bztvTn9wm4VR8u8jMKT
+    class Srsly_Program {
+        <<abstract>>
+        +create_contract()
+        +close_contract()
+        +accept_rental()
+        +cancel_rental()
+        +close_rental()
+        +pay_rental()
+        +reset_rental()
+    }
+
+    %% -- ACCOUNTS --
+
+    class Sage_Game {
+        +u8 version
+        +u64 updateId
+        +publicKey profile
+        +publicKey gameState
+
+        %% Points
+        +publicKey lpCategory_category
+        +publicKey lpCategory_modifier
+        +u8 lpCategory_modifierBump
+
+        +publicKey councilRankXpCategory_category
+        +publicKey councilRankXpCategory_modifier
+        +u8 councilRankXpCategory_modifierBump
+
+        +publicKey pilotXpCategory_category
+        +publicKey pilotXpCategory_modifier
+        +u8 pilotXpCategory_modifierBump
+
+        +publicKey dataRunningXpCategory_category
+        +publicKey dataRunningXpCategory_modifier
+        +u8 dataRunningXpCategory_modifierBump
+
+        +publicKey miningXpCategory_category
+        +publicKey miningXpCategory_modifier
+        +u8 miningXpCategory_modifierBump
+
+        +publicKey craftingXpCategory_category
+        +publicKey craftingXpCategory_modifier
+        +u8 craftingXpCategory_modifierBump
+
+        %% Cargo
+        +publicKey cargo_statsDefinition
+
+        %% Crafting
+        +publicKey crafting_domain
+
+        %% Mints
+        +publicKey mints_atlas
+        +publicKey mints_polis
+        +publicKey mints_ammo
+        +publicKey mints_food
+        +publicKey mints_fuel
+        +publicKey mints_repairKit
+
+        %% Vaults
+        +publicKey vaults_atlas
+        +publicKey vaults_polis
+
+        %% Risk Zones (5)
+        +i64[2] mudSecurityZone_center
+        +u64 mudSecurityZone_radius
+
+        +i64[2] oniSecurityZone_center
+        +u64 oniSecurityZone_radius
+
+        +i64[2] usturSecurityZone_center
+        +u64 usturSecurityZone_radius
+
+        +i64[2] highRiskZone_center
+        +u64 highRiskZone_radius
+
+        +i64[2] mediumRiskZone_center
+        +u64 mediumRiskZone_radius
+
+    }
+    note for Sage_Game "Manages core game configuration and global settings"
+
+    class Sage_GameState {
+        +u8 version
+        +u64 updateId
+        +publicKey gameId
+
+        %% FleetInfo: FactionsStarbaseLevelInfo - MUD Levels 0 to 6
+        +publicKey mud_level0_recipeForUpgrade
+        +publicKey mud_level0_recipeCategoryForLevel
+        +string mud_level0_hp
+        +string mud_level0_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 mud_level0_sectorRingAvailable
+        +string mud_level0_warpLaneMovementFee
+
+        +publicKey mud_level1_recipeForUpgrade
+        +publicKey mud_level1_recipeCategoryForLevel
+        +string mud_level1_hp
+        +string mud_level1_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 mud_level1_sectorRingAvailable
+        +string mud_level1_warpLaneMovementFee
+
+        +publicKey mud_level2_recipeForUpgrade
+        +publicKey mud_level2_recipeCategoryForLevel
+        +string mud_level2_hp
+        +string mud_level2_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 mud_level2_sectorRingAvailable
+        +string mud_level2_warpLaneMovementFee
+
+        +publicKey mud_level3_recipeForUpgrade
+        +publicKey mud_level3_recipeCategoryForLevel
+        +string mud_level3_hp
+        +string mud_level3_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 mud_level3_sectorRingAvailable
+        +string mud_level3_warpLaneMovementFee
+
+        +publicKey mud_level4_recipeForUpgrade
+        +publicKey mud_level4_recipeCategoryForLevel
+        +string mud_level4_hp
+        +string mud_level4_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 mud_level4_sectorRingAvailable
+        +string mud_level4_warpLaneMovementFee
+
+        +publicKey mud_level5_recipeForUpgrade
+        +publicKey mud_level5_recipeCategoryForLevel
+        +string mud_level5_hp
+        +string mud_level5_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 mud_level5_sectorRingAvailable
+        +string mud_level5_warpLaneMovementFee
+
+        +publicKey mud_level6_recipeForUpgrade
+        +publicKey mud_level6_recipeCategoryForLevel
+        +string mud_level6_hp
+        +string mud_level6_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 mud_level6_sectorRingAvailable
+        +string mud_level6_warpLaneMovementFee
+
+        %% ONI Levels 0 to 6
+        +publicKey oni_level0_recipeForUpgrade
+        +publicKey oni_level0_recipeCategoryForLevel
+        +string oni_level0_hp
+        +string oni_level0_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 oni_level0_sectorRingAvailable
+        +string oni_level0_warpLaneMovementFee
+
+        +publicKey oni_level1_recipeForUpgrade
+        +publicKey oni_level1_recipeCategoryForLevel
+        +string oni_level1_hp
+        +string oni_level1_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 oni_level1_sectorRingAvailable
+        +string oni_level1_warpLaneMovementFee
+
+        +publicKey oni_level2_recipeForUpgrade
+        +publicKey oni_level2_recipeCategoryForLevel
+        +string oni_level2_hp
+        +string oni_level2_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 oni_level2_sectorRingAvailable
+        +string oni_level2_warpLaneMovementFee
+
+        +publicKey oni_level3_recipeForUpgrade
+        +publicKey oni_level3_recipeCategoryForLevel
+        +string oni_level3_hp
+        +string oni_level3_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 oni_level3_sectorRingAvailable
+        +string oni_level3_warpLaneMovementFee
+
+        +publicKey oni_level4_recipeForUpgrade
+        +publicKey oni_level4_recipeCategoryForLevel
+        +string oni_level4_hp
+        +string oni_level4_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 oni_level4_sectorRingAvailable
+        +string oni_level4_warpLaneMovementFee
+
+        +publicKey oni_level5_recipeForUpgrade
+        +publicKey oni_level5_recipeCategoryForLevel
+        +string oni_level5_hp
+        +string oni_level5_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 oni_level5_sectorRingAvailable
+        +string oni_level5_warpLaneMovementFee
+
+        +publicKey oni_level6_recipeForUpgrade
+        +publicKey oni_level6_recipeCategoryForLevel
+        +string oni_level6_hp
+        +string oni_level6_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 oni_level6_sectorRingAvailable
+        +string oni_level6_warpLaneMovementFee
+
+        %% USTUR Levels 0 to 6
+        +publicKey ustur_level0_recipeForUpgrade
+        +publicKey ustur_level0_recipeCategoryForLevel
+        +string ustur_level0_hp
+        +string ustur_level0_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 ustur_level0_sectorRingAvailable
+        +string ustur_level0_warpLaneMovementFee
+
+        +publicKey ustur_level1_recipeForUpgrade
+        +publicKey ustur_level1_recipeCategoryForLevel
+        +string ustur_level1_hp
+        +string ustur_level1_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 ustur_level1_sectorRingAvailable
+        +string ustur_level1_warpLaneMovementFee
+
+        +publicKey ustur_level2_recipeForUpgrade
+        +publicKey ustur_level2_recipeCategoryForLevel
+        +string ustur_level2_hp
+        +string ustur_level2_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 ustur_level2_sectorRingAvailable
+        +string ustur_level2_warpLaneMovementFee
+
+        +publicKey ustur_level3_recipeForUpgrade
+        +publicKey ustur_level3_recipeCategoryForLevel
+        +string ustur_level3_hp
+        +string ustur_level3_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 ustur_level3_sectorRingAvailable
+        +string ustur_level3_warpLaneMovementFee
+
+        +publicKey ustur_level4_recipeForUpgrade
+        +publicKey ustur_level4_recipeCategoryForLevel
+        +string ustur_level4_hp
+        +string ustur_level4_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 ustur_level4_sectorRingAvailable
+        +string ustur_level4_warpLaneMovementFee
+
+        +publicKey ustur_level5_recipeForUpgrade
+        +publicKey ustur_level5_recipeCategoryForLevel
+        +string ustur_level5_hp
+        +string ustur_level5_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 ustur_level5_sectorRingAvailable
+        +string ustur_level5_warpLaneMovementFee
+
+        +publicKey ustur_level6_recipeForUpgrade
+        +publicKey ustur_level6_recipeCategoryForLevel
+        +string ustur_level6_hp
+        +string ustur_level6_sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 ustur_level6_sectorRingAvailable
+        +string ustur_level6_warpLaneMovementFee
+
+        %% StarbaseUpkeepLevels (Levels 0 to 6)
+        +u64 upkeep_level0_ammoReserve
+        +u32 upkeep_level0_ammoDepletionRate
+        +u64 upkeep_level0_foodReserve
+        +u32 upkeep_level0_foodDepletionRate
+        +u64 upkeep_level0_toolkitReserve
+        +u32 upkeep_level0_toolkitDepletionRate
+
+        +u64 upkeep_level1_ammoReserve
+        +u32 upkeep_level1_ammoDepletionRate
+        +u64 upkeep_level1_foodReserve
+        +u32 upkeep_level1_foodDepletionRate
+        +u64 upkeep_level1_toolkitReserve
+        +u32 upkeep_level1_toolkitDepletionRate
+
+        +u64 upkeep_level2_ammoReserve
+        +u32 upkeep_level2_ammoDepletionRate
+        +u64 upkeep_level2_foodReserve
+        +u32 upkeep_level2_foodDepletionRate
+        +u64 upkeep_level2_toolkitReserve
+        +u32 upkeep_level2_toolkitDepletionRate
+
+        +u64 upkeep_level3_ammoReserve
+        +u32 upkeep_level3_ammoDepletionRate
+        +u64 upkeep_level3_foodReserve
+        +u32 upkeep_level3_foodDepletionRate
+        +u64 upkeep_level3_toolkitReserve
+        +u32 upkeep_level3_toolkitDepletionRate
+
+        +u64 upkeep_level4_ammoReserve
+        +u32 upkeep_level4_ammoDepletionRate
+        +u64 upkeep_level4_foodReserve
+        +u32 upkeep_level4_foodDepletionRate
+        +u64 upkeep_level4_toolkitReserve
+        +u32 upkeep_level4_toolkitDepletionRate
+
+        +u64 upkeep_level5_ammoReserve
+        +u32 upkeep_level5_ammoDepletionRate
+        +u64 upkeep_level5_foodReserve
+        +u32 upkeep_level5_foodDepletionRate
+        +u64 upkeep_level5_toolkitReserve
+        +u32 upkeep_level5_toolkitDepletionRate
+
+        +u64 upkeep_level6_ammoReserve
+        +u32 upkeep_level6_ammoDepletionRate
+        +u64 upkeep_level6_foodReserve
+        +u32 upkeep_level6_foodDepletionRate
+        +u64 upkeep_level6_toolkitReserve
+        +u32 upkeep_level6_toolkitDepletionRate
+
+        %% MiscVariables
+        +i16 warpLaneFuelCostReduction
+        +u64 respawnFee
+        +i16 upkeepMiningEmissionsPenalty
+
+        %% FleetInfo
+        +u32 maxFleetSize
+
+        +u8 bump
+
+    }
+    note for Sage_GameState "Stores detailed game state data including faction starbase levels and upkeep configurations"
+
+    class Cargo_CargoStatsDefinition {
+        +u8 version
+        +publicKey authority
+        +publicKey defaultCargoType
+        +u8 statsCount
+        +u8 seqId
+
+    }
+    note for Cargo_CargoStatsDefinition "Defines the statistical framework for cargo types and their properties"
+
+    class Cargo_CargoType {
+        +u8 version
+        +publicKey statsDefinition
+        +publicKey mint
+        +publicKey creator
+        +u8 bump
+        +u8 statsCount
+        +u8 seqId
+
+    }
+    note for Cargo_CargoType "Represents a specific type of cargo with its mint and statistical properties"
+
+    class Sage_Starbase {
+        +u8 version
+        +publicKey gameId
+        +i64[2] sector
+        +publicKey craftingFacility
+        +publicKey upgradeFacility
+        +u8[64] name
+        +i64[2] subCoordinates
+        +u8 faction
+        +u8 bump
+        +u16 seqId
+        %% 0 = Active, 1 = Destroyed
+        +u8 state
+        +u8 level
+        +u64 hp
+        +u64 sp
+        %% 0 = Inner, 1 = Mid, 2 = Outer
+        +u8 sectorRingAvailable
+        %% 0 = Not Started, 1 = Started, 2 = Completed
+        +u8 upgradeState
+        +u8[16] upgradeIngredientsChecksum
+        +u8 numUpgradeIngredients
+
+        %% Upkeep - Ammo
+        +u64 upkeepAmmoBalance
+        +i64 upkeepAmmoLastUpdate
+        +i64 upkeepAmmoGlobalLastUpdate
+
+        %% Upkeep - Food
+        +u64 upkeepFoodBalance
+        +i64 upkeepFoodLastUpdate
+        +i64 upkeepFoodGlobalLastUpdate
+
+        %% Upkeep - Toolkit
+        +u64 upkeepToolkitBalance
+        +i64 upkeepToolkitLastUpdate
+        +i64 upkeepToolkitGlobalLastUpdate
+
+        +i64 builtDestroyedTimestamp
+
+    }
+    note for Sage_Starbase "Represents a space station with faction affiliation, upkeep systems, and upgrade capabilities"
+
+    class Sage_SagePlayerProfile {
+        +u8 version
+        +publicKey playerProfile
+        +publicKey gameId
+        +u8 bump
+
+    }
+    note for Sage_SagePlayerProfile "Links a player profile to the SAGE game system"
+
+    class Sage_StarbasePlayer {
+        +u8 version
+        +publicKey playerProfile
+        +publicKey gameId
+        +publicKey starbase
+        +publicKey sagePlayerProfile
+        +u8 bump
+        +u32 shipEscrowCount
+        +u32 oldTotalCrew
+        +u32 newTotalCrew
+        +u64 busyCrew
+        +u64 updateId
+        +u32 updatedShipEscrowCount
+
+    }
+    note for Sage_StarbasePlayer "Manages a player's interaction with a specific starbase including crew and ship escrow"
+
+    %% 23MZ2crHoWKJ6rvZz8B7fEJchvFNHcq6HMBrFabEksrK
+    class Sage_SurveyDataUnitTracker {
+        +u8 version
+        +publicKey gameId
+        +publicKey sduMint
+        +publicKey resourceMint
+        +publicKey signer
+        +u8 signerBump
+        +i64[2] coordinatesRange
+        +i64[2][3] cssCoordinates
+        +i64[2] originCoordinates
+        +u32 cssMaxDistance
+        +u32 originMaxDistance
+        +u32 distanceWeighting
+        +i64 tMax
+        +u32 xMul
+        +u32 yMul
+        +u32 zMul
+        +u32 sduMaxPerSector
+        +i16 scanChanceRegenPeriod
+
+    }
+    note for Sage_SurveyDataUnitTracker "Tracks and manages Survey Data Unit (SDU) collection and scanning mechanics"
+
+    class Crafting_Domain {
+        +u8 version
+        +publicKey profile
+        +u8[32] namespace
+
+    }
+    note for Crafting_Domain "Defines a crafting domain namespace for organizing recipes and facilities"
+
+    class Crafting_CraftingFacility {
+        +u8 version
+        +publicKey domain
+        +publicKey location
+        %% 0 = Starbase, soon new types..
+        +u8 locationType
+        +u64 maxConcurrentProcesses
+        +u8 numConcurrentProcesses
+        +u16 efficiency
+        +u8 numRecipeCategories
+
+    }
+    note for Crafting_CraftingFacility "Represents a physical location where crafting processes can be executed"
+
+    class Crafting_RecipeCategory {
+        +u8 version
+        +publicKey domain
+        +publicKey creator
+        +u8 recipeCount
+        +u8[32] namespace
+
+    }
+    note for Crafting_RecipeCategory "Groups related crafting recipes into organized categories"
+
+    class Crafting_Recipe {
+        +u8 version
+        +publicKey domain
+        +publicKey category
+        +publicKey creator
+        +u8 duration
+        +u8 minDuration
+        +u8[32] namespace
+        %% 0 = Initializing, 1 = Active, 2 = Deactivated
+        +u8 status
+        +u64 feeAmount
+        +Optional<publicKey> feeRecipient
+        +u64 usageCount
+        +u64 usageLimit
+        +u64 value
+        +u8 consumablesCount
+        +u8 nonConsumablesCount
+        +u8 outputsCount
+        +u8 totalCount
+
+    }
+    note for Crafting_Recipe "Defines a specific crafting recipe with ingredients, outputs, and requirements"
+
+    class Sage_CraftingInstance {
+        +u8 version
+        +u64 seqId
+        +publicKey authority
+        +publicKey craftingProcess
+        +u8 instanceType
+        +u64 numCrew
+        +u8 bump
+
+    }
+    note for Sage_CraftingInstance "Represents an active crafting operation with crew assignment"
+
+    class Crafting_CraftingProcess {
+        +u8 version
+        +u64 craftingId
+        +publicKey authority
+        +publicKey recipe
+        +publicKey craftingFacility
+        +u8[16] inputsChecksum
+        +u8[16] outputsChecksum
+        +u64 quantity
+        %% 0 = Initialized, 1 = Started, 2 = Completed
+        +u8 status
+        +u64 startTime
+        +u64 endTime
+        +u8 denyPermissionlessClaiming
+        +u8 useLocalTime
+        +u8 bump
+
+    }
+    note for Crafting_CraftingProcess "Manages the execution state and timing of a crafting operation"
+
+    class Crafting_CraftableItem {
+        +u8 version
+        +publicKey domain
+        +publicKey mint
+        %% System Program (11111111111111111111111111111111)
+        +publicKey creator
+        +u8[32] namespace
+        +u8 bump
+
+    }
+    note for Crafting_CraftableItem "Defines an item that can be crafted, linking a mint to a crafting domain"
+
+    class Sage_Fleet {
+        +u8 version
+        +publicKey gameId
+        +publicKey ownerProfile
+        +publicKey fleetShips
+        +publicKey subProfile
+        +publicKey subProfileInvalidator
+        +u8 faction
+        +u8[32] fleetLabel
+
+        %% ShipCounts
+        +u32 shipCounts_total
+        +u32 shipCounts_updated
+        +u16 shipCounts_xxSmall
+        +u16 shipCounts_xSmall
+        +u16 shipCounts_small
+        +u16 shipCounts_medium
+        +u16 shipCounts_large
+        +u16 shipCounts_capital
+        +u16 shipCounts_commander
+        +u16 shipCounts_titan
+
+        %% Cooldowns
+        +i64 warpCooldownExpiresAt
+        +i64 scanCooldownExpiresAt
+
+        %% MovementStats
+        +u32 subwarpSpeed
+        +u32 warpSpeed
+        +u16 maxWarpDistance
+        +u16 warpCoolDown
+        +u32 subwarpFuelConsumptionRate
+        +u32 warpFuelConsumptionRate
+        +u32 planetExitFuelAmount
+
+        %% CargoStats
+        +u32 cargoCapacity
+        +u32 fuelCapacity
+        +u32 ammoCapacity
+        +u32 ammoConsumptionRate
+        +u32 foodConsumptionRate
+        +u32 miningRate
+        +u32 upgradeRate
+        +u32 cargoTransferRate
+        +u32 tractorBeamGatherRate
+
+        %% MiscStats
+        +u16 requiredCrew
+        +u16 passengerCapacity
+        +u16 crewCount
+        +u16 rentedCrew
+        +u16 respawnTime
+        +u16 scanCoolDown
+        +u32 sduPerScan
+        +u32 scanCost
+        +u32 misc_placeholder
+        +u32 misc_placeholder2
+        +u32 misc_placeholder3
+
+        %% Banks
+        +publicKey cargoHold
+        +publicKey fuelTank
+        +publicKey ammoBank
+
+        +u64 updateId
+        +u8 bump
+
+    }
+    note for Sage_Fleet "Represents a fleet of ships with movement, cargo, and combat capabilities"
+
+    class Sage_FleetShips {
+        +u8 version
+        +publicKey fleet
+        +u32 fleetShipsInfoCount
+        +u8 bump
+    }
+    note for Sage_FleetShips "Contains detailed information about individual ships within a fleet"
+
+    class Cargo_CargoPod {
+        +u8 version
+        +publicKey statsDefinition
+        +publicKey authority
+        +u8 openTokenAccounts
+        +u8[32] podSeeds
+        +u8 podBump
+        +u8 seqId
+        +u8 unupdatedTokenAccounts
+
+    }
+    note for Cargo_CargoPod "Manages token accounts for storing various types of cargo items"
+
+    class Sage_DisbandedFleet {
+        +u8 version
+        +publicKey gameId
+        +publicKey ownerProfile
+        +publicKey starbase
+        +u8[32] fleetLabel
+        +publicKey fleetShips
+        +u8 bump
+
+    }  
+    note for Sage_DisbandedFleet "Represents a disbanded fleet linked to a specific profile and starbase. Used to retain metadata after a fleet has been disassembled. fleetShips points to the list of ships originally part of the fleet."
+
+    class Sage_Ship {
+        +u8 version
+        +publicKey gameId
+        +publicKey mint
+        +u8[64] name
+        %% 0 = xxSmall, 1 = xSmall, 2 = small, 3 = medium, 4 = large, 5 = capital, 6 = commander, 7 = titan
+        +u8 sizeClass
+        +u64 updateId
+        +u64 maxUpdateId
+        +Optional<publicKey> next
+
+        %% MovementStats
+        +u32 movementStats_subwarpSpeed
+        +u32 movementStats_warpSpeed
+        +u16 movementStats_maxWarpDistance
+        +u16 movementStats_warpCoolDown
+        +u32 movementStats_subwarpFuelConsumptionRate
+        +u32 movementStats_warpFuelConsumptionRate
+        +u32 movementStats_planetExitFuelAmount
+
+        %% CargoStats
+        +u32 cargoStats_cargoCapacity
+        +u32 cargoStats_fuelCapacity
+        +u32 cargoStats_ammoCapacity
+        +u32 cargoStats_ammoConsumptionRate
+        +u32 cargoStats_foodConsumptionRate
+        +u32 cargoStats_miningRate
+        +u32 cargoStats_upgradeRate
+        +u32 cargoStats_cargoTransferRate
+        +u32 cargoStats_tractorBeamGatherRate
+
+        %% MiscStats
+        +u16 miscStats_requiredCrew
+        +u16 miscStats_passengerCapacity
+        +u16 miscStats_crewCount
+        +u16 miscStats_rentedCrew
+        +u16 miscStats_respawnTime
+        +u16 miscStats_scanCoolDown
+        +u32 miscStats_sduPerScan
+        +u32 miscStats_scanCost
+        +u32 miscStats_placeholder
+        +u32 miscStats_placeholder2
+        +u32 miscStats_placeholder3
+
+    }
+    note for Sage_Ship "Represents an individual ship with its technical specifications, movement capabilities, cargo capacity, and operational characteristics. Contains all the base stats that define a ship's performance in the game."
+
+    class Crew_CrewConfig {
+        +u8 version
+        %% System Program (11111111111111111111111111111111)
+        +publicKey seedPubkey
+        +u8 bump
+        +publicKey profile
+        +u8[32] namePrefix
+        +u8 namePrefixLen
+        +u8[10] symbol
+        +u8 symbolLen
+        +u8[40] uriPrefix
+        +u8 uriPrefixLen
+        +u16 sellerFeeBasisPoints
+        +publicKey collectionMint
+        
+        %% Creators Array
+        +publicKey creators_0_key
+        +u8 creators_0_share
+        %% System Program (11111111111111111111111111111111)
+        +publicKey creators_1_key
+        +u8 creators_1_share
+        %% System Program (11111111111111111111111111111111)
+        +publicKey creators_2_key
+        +u8 creators_2_share
+        %% System Program (11111111111111111111111111111111)
+        +publicKey creators_3_key
+        +u8 creators_3_share
+        
+        +u8 creatorCount
+        +u32 totalMinted
+        +u32 totalAllocated
+
+    }
+    note for Crew_CrewConfig "Defines crew NFT collection configuration including metadata, creators, minting limits, and collection parameters"
+
+    class Sage_SageCrewConfig {
+        +u8 version
+        +publicKey gameId
+        +publicKey config
+        +u8 bump
+
+    }
+    note for Sage_SageCrewConfig "Links SAGE game instance to crew configuration, enabling crew management within the game"
+
+    class Crew_PackTiers {
+        +u8 version
+        +publicKey crewConfig
+        %% 7bTpAF7wA7FJE9Mo5sAkbzGpGY2TBgiraeewTureBvf
+        +publicKey seedPubkey
+        +u8 tier
+        +u8 bump
+        +u32 common
+        +u32 uncommon
+        +u32 rare
+        +u32 epic
+        +u32 legendary
+        +u32 anomaly
+
+    }
+    note for Crew_PackTiers "Defines rarity distribution and quantities for crew pack tiers with different rarity levels"
+
+    class Crew_PackType {
+        +u8 version
+        +u8 bump
+        +publicKey crewConfig
+        +publicKey packTiers
+        %% 1 = MUD, 2 = ONI, 3 = USTUR
+        +u8 faction
+
+    }
+    note for Crew_PackType "Defines a specific crew pack type associated with a faction and tier configuration"
+
+    %% Never seen in any transaction
+    class Sage_PlayerCrewRecord {
+        +u8 version
+        +publicKey playerProfile
+        +publicKey crewConfig
+        +publicKey gameId
+        +u32 count
+        +u8 bump
+
+    }
+    note for Sage_PlayerCrewRecord "Tracks crew ownership and count for a specific player profile within the game"
+
+    class Crew_SftRedemption {
+        +u8 version
+        +u8 bump
+        +publicKey packType
+        +publicKey sftMint
+        +publicKey crewConfig
+        +u32 redemptionAmount
+
+    }
+    note for Crew_SftRedemption "Manages SFT (Semi-Fungible Token) redemption for crew packs with specific amounts"
+
+    class Crew_UserRedemption {
+        +u8 version
+        +u8 bump
+        +publicKey crewConfig
+        +publicKey seedPubkey
+        +publicKey owner
+        +u32 mintOffset
+        +u32 amount
+        +u32 numberMinted
+        +publicKey packType
+        +u8[32] userSeed
+        +u8[32] serverHash
+        +publicKey sageProfile
+
+    }
+    note for Crew_UserRedemption "Tracks individual user crew redemption with minting details and verification hashes"
+
+    class Sage_Sector {
+        +u8 version
+        +publicKey gameId
+        +i64[2] coordinates
+        +publicKey discoverer
+        +u8[64] name
+        +u16 numStars
+        +u16 numPlanets
+        +u16 numMoons
+        +u16 numAsteroidBelts
+        +i64 lastScanTime
+        +u32 lastScanChance
+        +u8 bump
+        +u16 numConnections
+
+    }
+    note for Sage_Sector "Represents a galactic sector with discoverable celestial objects and scanning data"
+
+    class Sage_Planet {
+        +u8 version
+        +u8[64] name
+        +publicKey gameId
+        +i64[2] sector
+        +i64[2] subCoordinates
+        %% 0 = Terrestrial, 1 = Volcanic, 2 = Barren, 3 = Asteroid Belt, 4 = Gas Giant, 5 = Ice Giant, 6 = Dark
+        +u8 planetType
+        +u8 position
+        +u64 size
+        +u64 maxHp
+        +u64 currentHealth
+        +u64 amountMined
+        +u8 numResources
+        +u64 numMiners
+
+    }
+    note for Sage_Planet "Represents a mineable celestial body with resources and mining activity tracking"
+
+    class Sage_Resource {
+        +u8 version
+        +publicKey gameId
+        +publicKey location
+        +publicKey mineItem
+        %% 0 = Planet
+        +u8 locationType
+        +u16 systemRichness
+        +u64 amountMined
+        +u64 numMiners
+        +u8 bump
+
+    }
+    note for Sage_Resource "Defines a specific resource type available for mining at a location"
+
+    class Sage_MineItem {
+        +u8 version
+        +publicKey gameId
+        +u8[64] name
+        +publicKey mint
+        +u16 resourceHardness
+        +u64 numResourceAccounts
+        +u8 bump
+
+    }
+    note for Sage_MineItem "Defines a mineable resource type with its characteristics and hardness"
+
+    class Sage_Star {
+        +u8 version
+        +u8[64] name
+        +publicKey gameId
+        +i64[2] sector
+        +u64 size
+        +i64[2] subCoordinates
+        %% 0 = WhiteDwarf, 1 = Reddwarf, 2 = Solar, 3 = Hotblue, 4 = Redgiant
+        +u8 starType
+
+    }
+    note for Sage_Star "Represents a star system with its physical properties and location"
+
+    class PlayerProfile_Profile {
+        +u8 version
+        +u16 authKeyCount
+        +u8 keyThreshold
+        +u64 nextSeqId
+        +i64 createdAt
+
+    }
+    note for PlayerProfile_Profile "Core player profile containing authentication keys and account metadata"
+
+    class PlayerProfile_PlayerName {
+        +u8 version
+        +publicKey profile
+        +u8 bump
+
+    }
+    note for PlayerProfile_PlayerName "Associates a player name with a player profile"
+
+    class ProfileFaction_ProfileFactionAccount {
+        +u8 version
+        +publicKey profile
+        %% 0 = Unaligned, 1 = MUD, 2 = ONI, 3 = USTUR
+        +u8 faction
+        +u8 bump
+
+    }
+    note for ProfileFaction_ProfileFactionAccount "Associates a player profile with one of the three game factions (MUD, ONI, USTUR)"
+
+    class PlayerProfile_Role {
+        +u8 version
+        +publicKey profile
+        %% System Program (11111111111111111111111111111111)
+        +publicKey authorizer
+        +u64 roleSeqId
+        %% 1 = Accepting, 0 = Not accepting
+        +u8 acceptingNewMembers
+        +u8 bump
+
+    }
+    note for PlayerProfile_Role "Defines a role within a player profile with authorization and membership settings (for DACs)"
+
+    class PlayerProfile_ProfileRoleMembership {
+        +u8 version
+        +publicKey profile
+        +publicKey member
+        +u8 bump
+
+    }
+    note for PlayerProfile_ProfileRoleMembership "Associates a member profile with a role profile, establishing membership relationships"
+
+    class ProfileVault_VaultAuthority {
+        +u8 version
+        +publicKey profile
+        %% the Player Profile owner key
+        +publicKey vaultSeed
+        +u8 vaultBump
+
+    }
+    note for ProfileVault_VaultAuthority "Manages vault authority and access control for player profiles"
+
+    class Points_PointCategory {
+        +u8 version
+        +publicKey profile
+        +u8 tokenRequired
+        +publicKey tokenMint
+        +u64 tokenQty
+        +u8 transferTokensToVault
+        +publicKey tokenVault
+        +u64 pointLimit
+        +u8 isSpendable
+        +u64 postLevelsUpgradeThreshold
+
+    }
+    note for Points_PointCategory "Defines a category of points/experience with earning and spending rules"
+
+    class Points_PointsModifier {
+        +u8 version
+        +publicKey pointCategory
+        +u8 canIncrement
+        +u8 canDecrement
+
+    }
+    note for Points_PointsModifier "Controls permissions for incrementing and decrementing points in a category"
+
+    class Points_UserPointsAccount {
+        +u8 version
+        +publicKey profile
+        +publicKey pointCategory
+        +u64 earnedPoints
+        +u64 spentPoints
+        +u64 level
+        +u64 dailyEarnedPoints
+        +u64 lastEarnedPointsTimestamp
+        +u8 bump
+
+    }
+    note for Points_UserPointsAccount "Tracks a player's points balance, level, and daily activity in a specific category"
+
+    class Sage_ProgressionConfig {
+        +u8 version
+        +publicKey gameId
+        +u64 dailyLpLimit
+        +u64 dailyCouncilRankXpLimit
+        +u64 dailyPilotXpLimit
+        +u64 dailyDataRunningXpLimit
+        +u64 dailyMiningXpLimit
+        +u64 dailyCraftingXpLimit
+        +u16 numItems
+
+    }
+    note for Sage_ProgressionConfig "Configures daily limits for various types of experience and loyalty points"
+
+    class PointsStore_RedemptionConfig {
+        +u8 version
+        +publicKey pointCategory
+        +publicKey profile
+        %% 1 = MUD, 2 = ONI, 3 = USTUR
+        +u8 faction
+        %% Atlas bank account
+        +publicKey bank
+        +u8 signerBump
+        +u8 allowOnlyCurrentEpoch
+
+    }
+    note for PointsStore_RedemptionConfig "Configures point redemption settings for specific categories and profiles with faction restrictions"
+
+    class PointsStore_UserRedemption {
+        +u8 version
+        +publicKey profile
+        +publicKey pointCategory
+        +publicKey userPointsAccount
+        +publicKey config
+        +u64 points
+        +u32 dayIndex
+
+    }
+    note for PointsStore_UserRedemption "Tracks individual user point redemption transactions and daily usage"
+
+    class PointsStore_PointsStore {
+        +u8 version
+        +publicKey pointCategory
+        +publicKey profile
+        %% Atlas bank account
+        +publicKey bank
+        +u64 price
+        +u8 signerBump
+
+    }
+    note for PointsStore_PointsStore "Defines a points store with pricing and category configuration"
+
+    class Marketplace_AtlasRateAccount {
+        +u64 atlasRate
+
+    }
+    note for Marketplace_AtlasRateAccount "Stores the current Atlas rate for marketplace operations"
+
+    class Marketplace_MarketVars {
+        +publicKey updateAuthorityMaster
+        +u8 bump
+
+    }
+    note for Marketplace_MarketVars "Contains marketplace configuration variables and update authority"
+
+    class Marketplace_OrderAccount {
+        +publicKey orderInitializerPubkey
+        +publicKey currencyMint
+        +publicKey assetMint
+        +publicKey initializerCurrencyTokenAccount
+        +publicKey initializerAssetTokenAccount
+        %% sell or buy
+        +u8 orderSide
+        +u64 price
+        +u64 orderOriginationQty
+        +u64 orderRemainingQty
+        +i64 createdAtTimestamp
+
+    }
+    note for Marketplace_OrderAccount "Represents a marketplace order with price, quantities, and asset details"
+
+    class Marketplace_RegisteredCurrency {
+        +publicKey tokenMint
+        +publicKey saCurrencyVault
+        +u64 royalty
+        +u8 bump
+        
+        %% RoyaltyTiers Array (5 elements)
+        +u64 royaltyTiers_0_stakeAmount
+        +u64 royaltyTiers_0_discount
+        +u64 royaltyTiers_1_stakeAmount
+        +u64 royaltyTiers_1_discount
+        +u64 royaltyTiers_2_stakeAmount
+        +u64 royaltyTiers_2_discount
+        +u64 royaltyTiers_3_stakeAmount
+        +u64 royaltyTiers_3_discount
+        +u64 royaltyTiers_4_stakeAmount
+        +u64 royaltyTiers_4_discount
+
+    }
+    note for Marketplace_RegisteredCurrency "Defines a registered currency with vault, royalty structure, and staking tiers"
+
+    class Marketplace_OpenOrdersCounter {
+        +u64 openOrderCount
+        +u8 bump
+
+    }
+    note for Marketplace_OpenOrdersCounter "Tracks the count of open orders per wallet for marketplace management"
+
+    class Marketplace_FeeReduction {
+        +publicKey account
+        +u8 bump
+        +u64 discount
+
+    }
+    note for Marketplace_FeeReduction "Defines fee reduction discounts for specific accounts in the marketplace"
+
+    class AtlasFeePayer_FeePayerRates {
+        +u8 version
+        +publicKey owningProfile
+        +publicKey tokenMint
+        +publicKey tokenOwner
+        +u64 tokenLimit
+        +u64 conversionRate
+
+    }
+    note for AtlasFeePayer_FeePayerRates "Defines token conversion rates and limits for Atlas fee payment system"
+
+    class AtlasFeePayer_FeePayer {
+        +u8 version
+        +publicKey rates
+        +publicKey tokenVault
+        +publicKey paymentAccount
+        +u64 lastPayerValue
+
+    }
+    note for AtlasFeePayer_FeePayer "Manages fee payment operations with vault and account tracking"
+
+    class Srsly_ContractState {
+        +u8 version
+        +bool toClose
+        +u64 rate
+        +u64 durationMin
+        +u64 durationMax
+        %% Decasecond, Minute, Hourly, Daily, Weekly, Monthly
+        +u8 paymentsFreq
+        +publicKey fleet
+        +publicKey gameId
+        %% System Program (11111111111111111111111111111111) when no active rental
+        +publicKey currentRentalState
+        +publicKey owner
+        +publicKey ownerTokenAccount
+        +publicKey ownerProfile
+        +u8 bump
+
+    }
+    note for Srsly_ContractState "Defines the overall rental contract parameters for a fleet. It stores the essential terms, fleet details, and owner information which govern the rental agreement"
+
+    class Srsly_RentalState {
+        +u8 version
+        +publicKey borrower
+        +publicKey thread
+        +publicKey contract
+        +publicKey ownerTokenAccount
+        +f64 rate
+        +i64 startTime
+        +i64 endTime
+        +bool cancelled
+        +u8 bump
+
+    }
+    note for Srsly_RentalState "Captures all details specific to an active rental session. It keeps track of payment details, session timings, cancellation status, and the thread that automates recurring payments"
+
+    %% -- INHERITANCE RELATIONS --
+
+    Sage_Program <|-- Sage_Game
+    Sage_Program <|-- Sage_GameState
+    Sage_Program <|-- Sage_Starbase
+    Sage_Program <|-- Sage_SagePlayerProfile
+    Sage_Program <|-- Sage_StarbasePlayer
+    Sage_Program <|-- Sage_SurveyDataUnitTracker
+    Sage_Program <|-- Sage_CraftingInstance
+    Sage_Program <|-- Sage_Fleet
+    Sage_Program <|-- Sage_FleetShips
+    Sage_Program <|-- Sage_DisbandedFleet
+    Sage_Program <|-- Sage_Ship
+    Sage_Program <|-- Sage_SageCrewConfig
+    Sage_Program <|-- Sage_PlayerCrewRecord
+    Sage_Program <|-- Sage_Sector
+    Sage_Program <|-- Sage_Planet
+    Sage_Program <|-- Sage_Resource
+    Sage_Program <|-- Sage_MineItem
+    Sage_Program <|-- Sage_Star
+    Sage_Program <|-- Sage_ProgressionConfig
+
+    Cargo_Program <|-- Cargo_CargoStatsDefinition
+    Cargo_Program <|-- Cargo_CargoType
+    Cargo_Program <|-- Cargo_CargoPod
+
+    Crafting_Program <|-- Crafting_Domain
+    Crafting_Program <|-- Crafting_CraftingFacility
+    Crafting_Program <|-- Crafting_RecipeCategory
+    Crafting_Program <|-- Crafting_Recipe
+    Crafting_Program <|-- Crafting_CraftingProcess
+    Crafting_Program <|-- Crafting_CraftableItem
+
+    PlayerProfile_Program <|-- PlayerProfile_Profile
+    PlayerProfile_Program <|-- PlayerProfile_PlayerName
+    PlayerProfile_Program <|-- PlayerProfile_Role
+    PlayerProfile_Program <|-- PlayerProfile_ProfileRoleMembership
+
+    ProfileFaction_Program <|-- ProfileFaction_ProfileFactionAccount
+
+    ProfileVault_Program <|-- ProfileVault_VaultAuthority
+
+    Points_Program <|-- Points_PointCategory
+    Points_Program <|-- Points_PointsModifier
+    Points_Program <|-- Points_UserPointsAccount
+
+    PointsStore_Program <|-- PointsStore_RedemptionConfig
+    PointsStore_Program <|-- PointsStore_UserRedemption
+    PointsStore_Program <|-- PointsStore_PointsStore
+
+    Crew_Program <|-- Crew_CrewConfig
+    Crew_Program <|-- Crew_PackTiers
+    Crew_Program <|-- Crew_PackType
+    Crew_Program <|-- Crew_SftRedemption
+    Crew_Program <|-- Crew_UserRedemption
+
+    Marketplace_Program <|-- Marketplace_AtlasRateAccount
+    Marketplace_Program <|-- Marketplace_MarketVars
+    Marketplace_Program <|-- Marketplace_OrderAccount
+    Marketplace_Program <|-- Marketplace_RegisteredCurrency
+    Marketplace_Program <|-- Marketplace_OpenOrdersCounter
+    Marketplace_Program <|-- Marketplace_FeeReduction
+
+    AtlasFeePayer_Program <|-- AtlasFeePayer_FeePayerRates
+    AtlasFeePayer_Program <|-- AtlasFeePayer_FeePayer
+
+    Srsly_Program <|-- Srsly_ContractState
+    Srsly_Program <|-- Srsly_RentalState
+
+    %% -- RELATIONS --
+
+    Sage_Game --> PlayerProfile_Profile : profile
+    Sage_Game --> Sage_GameState : gameState
+    Sage_Game --> Cargo_CargoStatsDefinition : cargo_statsDefinition
+    Sage_Game --> Crafting_Domain : crafting_domain
+    Sage_Game --> Points_PointCategory : lpCategory.category
+    Sage_Game --> Points_PointCategory : councilRankXpCategory.category
+    Sage_Game --> Points_PointCategory : pilotXpCategory.category
+    Sage_Game --> Points_PointCategory : dataRunningXpCategory.category
+    Sage_Game --> Points_PointCategory : miningXpCategory.category
+    Sage_Game --> Points_PointCategory : craftingXpCategory.category
+    Sage_Game --> Points_PointsModifier : lpCategory.modifier
+    Sage_Game --> Points_PointsModifier : councilRankXpCategory.modifier
+    Sage_Game --> Points_PointsModifier : pilotXpCategory.modifier
+    Sage_Game --> Points_PointsModifier : dataRunningXpCategory.modifier
+    Sage_Game --> Points_PointsModifier : miningXpCategory.modifier
+    Sage_Game --> Points_PointsModifier : craftingXpCategory.modifier
+
+    Sage_GameState --> Sage_Game : gameId
+
+    Sage_Starbase --> Sage_Game : gameId
+
+    Sage_SagePlayerProfile --> PlayerProfile_Profile : playerProfile
+    Sage_SagePlayerProfile --> Sage_Game : gameId
+
+    Sage_StarbasePlayer --> PlayerProfile_Profile : playerProfile
+    Sage_StarbasePlayer --> Sage_Starbase : starbase
+    Sage_StarbasePlayer --> Sage_SagePlayerProfile : sagePlayerProfile
+    Sage_StarbasePlayer --> Sage_Game : gameId
+
+    Cargo_CargoStatsDefinition --> PlayerProfile_Profile : authority
+
+    Crafting_Domain --> PlayerProfile_Profile : profile
+
+    Crafting_CraftingFacility --> Crafting_Domain : domain
+    Crafting_CraftingFacility --> Sage_Starbase : location
+
+    Crafting_RecipeCategory --> Crafting_Domain : domain
+
+    Crafting_Recipe --> Crafting_Domain : domain
+    Crafting_Recipe --> Crafting_RecipeCategory : category
+
+    Sage_CraftingInstance --> Sage_StarbasePlayer : authority
+    Sage_CraftingInstance --> Crafting_CraftingProcess : craftingProcess
+
+    Crafting_CraftingProcess --> Sage_CraftingInstance : authority
+    Crafting_CraftingProcess --> Crafting_Recipe : recipe
+    Crafting_CraftingProcess --> Crafting_CraftingFacility : craftingFacility
+
+    Crafting_CraftableItem --> Crafting_Domain : domain
+
+    Points_PointCategory --> PlayerProfile_Profile : profile
+
+    Points_PointsModifier --> Points_PointCategory : pointCategory
+
+    Points_UserPointsAccount --> ProfileFaction_ProfileFactionAccount : profile
+    Points_UserPointsAccount --> Points_PointCategory : pointCategory
+
+    PointsStore_RedemptionConfig --> Points_PointCategory : pointCategory
+    PointsStore_RedemptionConfig --> PlayerProfile_Profile : profile
+
+    PointsStore_UserRedemption --> PlayerProfile_Profile : profile
+    PointsStore_UserRedemption --> Points_PointCategory : pointCategory
+    PointsStore_UserRedemption --> Points_UserPointsAccount : userPointsAccount
+    PointsStore_UserRedemption --> PointsStore_RedemptionConfig : config
+
+    PointsStore_PointsStore --> Points_PointCategory : pointCategory
+    PointsStore_PointsStore --> PlayerProfile_Profile : profile
+
+    AtlasFeePayer_FeePayerRates --> PlayerProfile_Profile : owningProfile
+
+    AtlasFeePayer_FeePayer --> AtlasFeePayer_FeePayerRates : rates
+
+    Srsly_ContractState --> Sage_Fleet : fleet
+    Srsly_ContractState --> Sage_Game : gameId
+    Srsly_ContractState --> Srsly_RentalState : currentRentalState
+    Srsly_ContractState --> PlayerProfile_Profile : ownerProfile
+
+    Srsly_RentalState --> Srsly_ContractState : contract
+
+    Sage_Fleet --> Sage_Game : gameId
+    Sage_Fleet --> PlayerProfile_Profile : ownerProfile
+    %% If the fleet is not rented by another Player Profile different from ownerProfile, the default subProfile value is SystemProgram (11111111111111111111111111111111)
+    Sage_Fleet --> PlayerProfile_Profile : subProfile
+    Sage_Fleet --> PlayerProfile_Profile : subProfileInvalidator
+    Sage_Fleet --> Sage_FleetShips : fleetShips
+    Sage_Fleet --> Cargo_CargoPod : cargoHold
+    Sage_Fleet --> Cargo_CargoPod : fuelTank
+    Sage_Fleet --> Cargo_CargoPod : ammoBank
+
+    Sage_FleetShips --> Sage_Fleet : fleet
+
+    Sage_Ship --> Sage_Game : gameId
+
+    Crew_CrewConfig --> PlayerProfile_Profile : profile
+
+    Crew_PackTiers --> Crew_CrewConfig : crewConfig
+
+    Crew_PackType --> Crew_CrewConfig : crewConfig
+    Crew_PackType --> Crew_PackTiers : packTiers
+
+    Crew_SftRedemption --> Crew_PackType : packType
+    Crew_SftRedemption --> Crew_CrewConfig : crewConfig
+
+    Crew_UserRedemption --> Crew_CrewConfig : crewConfig
+    Crew_UserRedemption --> PlayerProfile_Profile : owner
+    Crew_UserRedemption --> Crew_PackType : packType
+    Crew_UserRedemption --> Sage_SagePlayerProfile : sageProfile
+
+    Sage_SageCrewConfig --> Sage_Game : gameId
+    Sage_SageCrewConfig --> Crew_CrewConfig : config
+
+    Sage_PlayerCrewRecord --> PlayerProfile_Profile : playerProfile
+    Sage_PlayerCrewRecord --> Crew_CrewConfig : crewConfig
+    Sage_PlayerCrewRecord --> Sage_Game : gameId
+
+    Cargo_CargoPod --> Cargo_CargoStatsDefinition : statsDefinition
+    Cargo_CargoPod --> Sage_Fleet : authority
+
+    Sage_DisbandedFleet --> Sage_Game : gameId
+    Sage_DisbandedFleet --> PlayerProfile_Profile : ownerProfile
+    Sage_DisbandedFleet --> Sage_Starbase : starbase
+    Sage_DisbandedFleet --> Sage_FleetShips : fleetShips
+    Sage_DisbandedFleet --> Sage_Fleet : fleet
+
+    Cargo_CargoType --> Cargo_CargoStatsDefinition : statsDefinition
+
+    ProfileFaction_ProfileFactionAccount --> PlayerProfile_Profile : profile
+
+    PlayerProfile_PlayerName --> PlayerProfile_Profile : profile
+    
+    PlayerProfile_Role --> PlayerProfile_Profile : profile
+    
+    PlayerProfile_ProfileRoleMembership --> PlayerProfile_Profile : profile
+    PlayerProfile_ProfileRoleMembership --> PlayerProfile_Profile : member
+
+    ProfileVault_VaultAuthority --> PlayerProfile_Profile : profile
+
+    Sage_SurveyDataUnitTracker --> Sage_Game : gameId
+
+    Sage_Sector --> Sage_Game : gameId
+    Sage_Sector --> PlayerProfile_Profile : discoverer
+
+    Sage_Planet --> Sage_Game : gameId
+
+    Sage_Resource --> Sage_Game : gameId
+    Sage_Resource --> Sage_MineItem : mineItem
+    Sage_Resource --> Sage_Planet : location
+
+    Sage_MineItem --> Sage_Game : gameId
+
+    Sage_Star --> Sage_Game : gameId
+
+    Sage_ProgressionConfig --> Sage_Game : gameId
+
+    %% -- PROGRAM NAMESPACES --
+
+    %% namespace Sage {
+    %%     class Sage_Program
+    %%     class Sage_Game
+    %%     class Sage_GameState
+    %%     class Sage_Starbase
+    %%     class Sage_SagePlayerProfile
+    %%     class Sage_StarbasePlayer
+    %%     class Sage_SurveyDataUnitTracker
+    %%     class Sage_CraftingInstance
+    %%     class Sage_Fleet
+    %%     class Sage_FleetShips
+    %%     class Sage_DisbandedFleet
+    %%     class Sage_Ship
+    %%     class Sage_SageCrewConfig
+    %%     class Sage_PlayerCrewRecord
+    %%     class Sage_Sector
+    %%     class Sage_Planet
+    %%     class Sage_Resource
+    %%     class Sage_MineItem
+    %%     class Sage_Star
+    %%     class Sage_ProgressionConfig
+    %% }
+
+    %% namespace Cargo {
+    %%     class Cargo_Program
+    %%     class Cargo_CargoStatsDefinition
+    %%     class Cargo_CargoType
+    %%     class Cargo_CargoPod
+    %% }
+
+    %% namespace Crafting {
+    %%     class Crafting_Program
+    %%     class Crafting_Domain
+    %%     class Crafting_CraftingFacility
+    %%     class Crafting_RecipeCategory
+    %%     class Crafting_Recipe
+    %%     class Crafting_CraftingProcess
+    %%     class Crafting_CraftableItem
+    %% }
+
+    %% namespace PlayerProfile {
+    %%     class PlayerProfile_Program
+    %%     class PlayerProfile_Profile
+    %%     class PlayerProfile_PlayerName
+    %%     class PlayerProfile_Role
+    %%     class PlayerProfile_ProfileRoleMembership
+    %% }
+
+    %% namespace ProfileFaction {
+    %%     class ProfileFaction_Program
+    %%     class ProfileFaction_ProfileFactionAccount
+    %% }
+
+    %% namespace ProfileVault {
+    %%     class ProfileVault_Program
+    %%     class ProfileVault_VaultAuthority
+    %% }
+
+    %% namespace Points {
+    %%     class Points_Program
+    %%     class Points_PointCategory
+    %%     class Points_PointsModifier
+    %%     class Points_UserPointsAccount
+    %% }
+
+    %% namespace PointsStore {
+    %%     class PointsStore_Program
+    %%     class PointsStore_RedemptionConfig
+    %%     class PointsStore_UserRedemption
+    %%     class PointsStore_PointsStore
+    %% }
+
+    %% namespace Crew {
+    %%     class Crew_Program
+    %%     class Crew_CrewConfig
+    %%     class Crew_PackTiers
+    %%     class Crew_PackType
+    %%     class Crew_SftRedemption
+    %%     class Crew_UserRedemption
+    %% }
+
+    %% namespace Marketplace {
+    %%     class Marketplace_Program
+    %%     class Marketplace_AtlasRateAccount
+    %%     class Marketplace_MarketVars
+    %%     class Marketplace_OrderAccount
+    %%     class Marketplace_RegisteredCurrency
+    %%     class Marketplace_OpenOrdersCounter
+    %%     class Marketplace_FeeReduction
+    %% }
+
+    %% namespace AtlasFeePayer {
+    %%     class AtlasFeePayer_Program
+    %%     class AtlasFeePayer_FeePayerRates
+    %%     class AtlasFeePayer_FeePayer
+    %% }
+
+    %% namespace Srsly {
+    %%     class Srsly_Program
+    %%     class Srsly_ContractState
+    %%     class Srsly_RentalState
+    %%     %% Thread Account from Thread Program is missing
+    %% }
